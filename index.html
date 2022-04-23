@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>::: Hanwha Groupware Portal :::</title>
+    <style>
+    * {
+      border-collapse: collapse;
+    }
+    div, form, input {
+      box-sizing : border-box;
+    }
+    /*전체 보이는 프레임*/
+    body {
+      height: 100vh;
+      margin: 0;
+    }
+    /*좌상단 이글오피스*/
+    h1 {
+      font-size: 31px;
+      font-weight: lighter;
+      letter-spacing: -0.5px;
+      margin-top: 9px;
+      margin-bottom: 240px;
+      margin-left: 15px;
+      font-family: "한화";
+    }
+    /*로그인창 위쪽 단락*/
+    .login > p {
+      position: relative;
+      bottom: 67px;
+      line-height: 15px;
+      font-size: 11px;
+      opacity: 50%;
+      font-family: "한화고딕";
+      padding-left: 5px;
+      margin-bottom: -13px;
+      letter-spacing: -0.5px;
+      font-weight: lighter;
+    }
+    /*배경 설정*/
+    .background {
+      width: 100%;
+      height: 96%;
+      min-width: 1920px;
+      min-height: 96%;
+      background-image: url(img_main3.jpg);
+      background-color: black;
+      background-size: contain 100%;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    /*좌측 음영처리(대형)*/
+    .left_opacity {
+      position: absolute;
+      width: 15.5%;
+      height: 100%;
+      background-color: black;
+      background-size: contain;
+      opacity: 50%;
+      z-index: 0;
+    }
+    /*로그인 박스 음영처리*/
+    .id_opacity {
+      position: absolute;
+      width: 15.5%;
+      height: 147px;
+      background-color: black;
+      opacity: 50%;
+      top: 39.9%;
+      z-index: 1;
+    }
+    /*좌측 Column*/
+    .leftcolumn {
+      position: absolute;
+      width: 15.5%;
+      height: 100%;
+      border-right: 5px solid white;
+      padding: 13px;
+      color: white;
+      z-index: 2;
+    }
+    /*로그인 박스 전체*/
+    .login {
+      position: inherit;
+      top: 38.5%;
+      padding-left: 12px;
+    }
+    /*IDPW박스 위치 설정*/
+    .idpw {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    /*IDPW 박스 글씨조정*/
+    .idpw td {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    /*ID저장 체크박스 위치 조정*/
+    .idpw input[type=checkbox] {
+      margin-left: -1px;
+    }
+    /*ID저장 문구 조정*/
+    .checkbox label {
+      vertical-align: 2px;
+      letter-spacing: -2px;
+      font-size: 12px;
+      margin-left: -7px;
+      padding-right: 3px;
+    }
+    /*input 박스 조정*/
+    input[type=text], input[type=password] {
+      height: 23px;
+      width: 130px;
+      margin: 3px;
+      margin-bottom: 0px;
+      margin-left: 4px;
+    }
+    /*로그인 버튼 위치 조정*/
+    .loginbutton {
+        float: right;
+        margin-top: 4px;
+    }
+    /*로그인 박스 하단 조정*/
+    .loginbox-footer {
+      font-size: 12px;
+      letter-spacing: -1px;
+      width: 90%;
+      float: right;
+      font-weight: bold;
+    }
+    .loginbox-footer td:nth-child(2) {
+      float:right;
+      margin-right: 20px;
+      color: #e6b800;
+    }
+    /*페이지 하단 footer 배경 검은색 설정*/
+    .footer_background {
+      width: 100%;
+      height: 4%;
+      min-height: 50px;
+      position: relative;
+      top: 95%;
+      background: black;
+      background-size: contain;
+      z-index: 3;
+    }
+    /*페이지 하단 footer flex 설정*/
+    .footer {
+      width: 85%;
+      height: 4%;
+      position: relative;
+      top: 100%;
+      z-index: 4;
+      color: white;
+      font-size: 11px;
+      display: flex;
+      flex-flow: row;
+      margin: 0;
+    }
+    /*flex 설정_오른쪽*/
+    .footer_right {
+      flex: 50%;
+      position: absolute;
+      right: 0;
+      bottom: 12px;
+    }
+    /*오른쪽 footer 상세 설정*/
+    .footer_right_text, .footer_right label {
+      padding-left: 10px;
+      font-family: hanwha;
+      font-size: 12px;
+      font-weight: lighter;
+      opacity: 50%;
+    }
+    /*오른쪽 footer hover 설정*/
+    .footer_right td:hover {
+      opacity: 100%;
+      cursor: pointer;
+    }
+    /*오른쪽 footer label 태그 글꼴, 위치 설정*/
+    .footer_right label {
+      vertical-align: 2px;
+      font-family: hanwhagothic;
+    }
+    /*오른쪽 footer 메뉴 중간 | 설정*/
+    .footer_right span {
+      margin-left:10px;
+    }
+    /*flex 설정_왼쪽*/
+    .footer_left {
+      flex: 50%;
+      position: absolute;
+      bottom: 1px;
+    }
+    /*왼쪽 footer 글꼴, 위치 설정*/
+    .footer_left span:nth-child(1) {
+      font-family: hanwha;
+      font-size: 17px;
+      margin-right: 15px;
+      margin-left: 60px;
+    }
+    /*왼쪽 footer 글꼴 설정*/
+    .footer_left span:nth-child(2) {
+      font-family: hanwha;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="left_opacity">
+      </div>
+      <div class="id_opacity">
+      </div>
+      <div class="leftcolumn">
+          <h1>eagleoffice</h1>
+          <div class="login">
+            <p>대한민국의 꿈을 미래로, 한화의 꿈을 세계로!<br>초일류 글로벌 한화의 꿈을 위해 한걸음 한걸음 나아갑니다.<br>한화이글오피스에 오신것을 환영합니다.</p>
+            <table class="idpw">
+              <tr>
+                <td>ID</td>
+                <td>
+                  <form>
+                    <input type="text" name="id">
+                  </form>
+                </td>
+                <td class="checkbox">
+                  <form>
+                    <input type="checkbox" name="check" id=check>
+                    <label for="check">아이디 저장</label>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <td>PW</td>
+                <td>
+                  <form>
+                    <input type="password" name="pw">
+                  </form>
+                </td>
+                <td class="loginbutton">
+                  <a href="#"><img src="btn_login.gif"></a>
+                </td>
+              </tr>
+            </table>
+            <table class="loginbox-footer">
+              <tr>
+                <td>· 필수설치 프로그램</td>
+                <td>· 비밀번호 재발급</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      <div class="footer">
+        <div class="footer_left">
+          <p><span>Hanwha</span>COPYRIGHT 2013 <span>Hanwha</span> S&C ALL RIGHTS RESERVED.</span></p>
+        </div>
+        <div class="footer_right">
+          <table>
+            <tr>
+              <td class="footer_right_text">한화그룹<span>|</span></td>
+              <td class="footer_right_text">한화데이즈<span>|</span></td>
+              <td class="footer_right_text">한화사회봉사단<span>|</span></td>
+              <td>
+                <form>
+                  <label for="selection_box_1">계열사 바로가기</label>
+                  <select id="selection_box_1" name="select_1">
+                    <option value="select">분류선택</option>
+                    <option value="group">그룹</option>
+                    <option value="manu/const">제조/건설</option>
+                    <option value="finance">금융</option>
+                    <option value="serv/leisure">서비스/레져</option>
+                  </select>
+                </form>
+              </td>
+              <td>
+                  <select name="select_2">
+                  <option value="select">그룹사선택</option>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer_background">
+      </div>
+    </div>
+
+  </body>
+</html>
